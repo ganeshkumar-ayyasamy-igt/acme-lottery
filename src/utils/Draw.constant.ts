@@ -1,0 +1,10 @@
+const DrawConstant = {
+    DRAW_LOT_TICKET_MAX: 3,
+    DRAW_LOT_TICKET_MIN: 1,
+    DRAW_LOT_TICKET_BASE: 5,
+    DRAW_LOT_START_NUM: 1,
+    DRAW_LOT_END_NUM: 42,
+    DRAW_LOT_NUM_PER_ROW: 7,
+};
+
+export { DrawConstant };
