@@ -1,6 +1,7 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, View } from 'react-native';
-import { colors } from '../theme/Colors';
+import React from "react";
+import { SafeAreaView, StyleSheet, View } from "react-native";
+
+import { colors } from "../theme/Colors";
 
 type MainLayoutProps = {
   children: React.ReactNode;

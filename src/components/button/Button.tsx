@@ -8,9 +8,10 @@ import {
   ViewStyle,
   TextStyle,
 } from "react-native";
+import { moderateScale } from "react-native-size-matters";
+
 import { colors } from "../../theme/Colors"; // adjust path if needed
 import { spacing } from "../../theme/Spacing";
-import { moderateScale } from "react-native-size-matters";
 
 type ButtonVariant = "primary" | "secondary" | "outline";
 
@@ -48,11 +49,7 @@ const Button: React.FC<ButtonProps> = ({
         styles.button,
         isPrimary && { backgroundColor: PRIMARY_COLOR },
         isSecondary && { backgroundColor: SECONDARY_COLOR },
-        isOutline && {
-          backgroundColor: "transparent",
-          borderWidth: 2,
-          borderColor: PRIMARY_COLOR,
-        },
+        isOutline && styles.outline,
         disabled && styles.disabled,
         style,
       ]}
@@ -95,8 +92,9 @@ const styles = StyleSheet.create({
   disabledText: {
     color: "#999",
   },
+  outline: {
+    borderWidth: 2,
+    borderColor: colors.primary,
+    backgroundColor: "transparent",
+  },
 });
-
-
-
-

@@ -1,8 +1,8 @@
 // secureStore.ts
-import * as SecureStore from 'expo-secure-store';
+import * as SecureStore from "expo-secure-store";
 
 const sanitizeKey = (key: string) => {
-  return key.replace(/[^a-zA-Z0-9.\-_]/g, '_'); // replace invalid chars with _
+  return key.replace(/[^a-zA-Z0-9.\-_]/g, "_"); // replace invalid chars with _
 };
 
 export const secureStorage = {
@@ -21,4 +21,3 @@ export const secureStorage = {
     await SecureStore.deleteItemAsync(safeKey);
   },
 };
-

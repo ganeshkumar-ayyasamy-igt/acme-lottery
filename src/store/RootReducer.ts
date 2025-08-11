@@ -1,6 +1,7 @@
 // src/store/rootReducer.ts
-import { combineReducers } from '@reduxjs/toolkit';
-import userLuckyDrawReducer from './slices/UserLuckyDrawSlice';
+import { combineReducers } from "@reduxjs/toolkit";
+
+import userLuckyDrawReducer from "./slices/UserLuckyDrawSlice";
 
 const rootReducer = combineReducers({
   userLuckyDraw: userLuckyDrawReducer,

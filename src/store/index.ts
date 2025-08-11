@@ -1,13 +1,14 @@
 // src/store/index.ts
-import { configureStore } from '@reduxjs/toolkit';
-import { persistStore, persistReducer } from 'redux-persist';
-import rootReducer from './RootReducer';
-import { secureStorage } from './SecureStore';
+import { configureStore } from "@reduxjs/toolkit";
+import { persistStore, persistReducer } from "redux-persist";
+
+import rootReducer from "./RootReducer";
+import { secureStorage } from "./SecureStore";
 
 const persistConfig = {
-  key: 'root',
+  key: "root",
   storage: secureStorage,
-  whitelist: ['userLuckyDraw'], // persist only this slice
+  whitelist: ["userLuckyDraw"], // persist only this slice
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

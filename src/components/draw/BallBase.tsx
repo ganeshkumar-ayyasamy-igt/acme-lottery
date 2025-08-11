@@ -1,8 +1,15 @@
 // BallBase.tsx
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, GestureResponderEvent } from 'react-native';
-import { colors } from '../../theme/Colors';
-import { spacing } from '../../theme/Spacing';
+import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  GestureResponderEvent,
+} from "react-native";
+
+import { colors } from "../../theme/Colors";
+import { spacing } from "../../theme/Spacing";
 
 interface BallBaseProps {
   label: string | number;
@@ -12,9 +19,22 @@ interface BallBaseProps {
   onPress?: (event: GestureResponderEvent) => void;
 }
 
-const BallBase = ({ label, size, isTouchable = false, isSelected = false, onPress }: BallBaseProps) => {
+const BallBase = ({
+  label,
+  size,
+  isTouchable = false,
+  isSelected = false,
+  onPress,
+}: BallBaseProps) => {
   const content = (
-    <Text style={[isSelected ? styles.touchText : styles.text, { fontSize: size * 0.4 }]}>{label}</Text>
+    <Text
+      style={[
+        isSelected ? styles.touchText : styles.text,
+        { fontSize: size * 0.4 },
+      ]}
+    >
+      {label}
+    </Text>
   );
 
   const ballStyle = [
@@ -40,8 +60,8 @@ export default BallBase;
 const styles = StyleSheet.create({
   ball: {
     backgroundColor: colors.white,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginHorizontal: spacing.xs,
   },
   touchBall: {
@@ -50,13 +70,13 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors.text,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   selectedBall: {
     backgroundColor: colors.text,
   },
   touchText: {
     color: colors.white,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });

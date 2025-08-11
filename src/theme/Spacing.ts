@@ -1,4 +1,4 @@
-import { scale } from 'react-native-size-matters';
+import { scale } from "react-native-size-matters";
 
 const spacing = {
   xs: 4,

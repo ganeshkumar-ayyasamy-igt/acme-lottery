@@ -1,10 +1,10 @@
-
 const TextConstant = {
   HOME_TITLE: "Your Numbers",
   LUCKY_LOTTO: "Lucky Lotto",
   ADD_PLAY: "Add Play",
   PURCHASE: "Purchase",
-  SELECTION_DUPLICATE: "This Lotto choice is already taken. Kindly select another",
+  SELECTION_DUPLICATE:
+    "This Lotto choice is already taken. Kindly select another",
   PICK_LOT_MIN: "Pick 5 Numbers",
   PLAY_NUMBERS: "Play Numbers",
   SELECTION_MISSED: "To proceed, please pick 5 numbers of your choice",

@@ -1,5 +1,5 @@
-import withResponsiveSize from '../../hooks/withResponsive';
-import BallBase from './BallBase';
+import BallBase from "./BallBase";
+import withResponsiveSize from "../../hooks/withResponsive";
 
 const Ball = withResponsiveSize(BallBase);
 
