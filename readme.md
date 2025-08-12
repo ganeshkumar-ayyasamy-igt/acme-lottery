@@ -31,7 +31,7 @@ SECRET_KEY=mySuperSecret123
 - TypeScript
 - Redux Toolkit + Redux Persist
 - React Navigation (Native Stack)
-- Async Storage + crypto-js for secure storage
+- Async Storage for storage
 - ESLint + Prettier for code quality
 
 ---
