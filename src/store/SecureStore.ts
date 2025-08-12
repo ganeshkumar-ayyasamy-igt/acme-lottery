@@ -1,23 +1,17 @@
-// secureStore.ts
-import * as SecureStore from "expo-secure-store";
-
-const sanitizeKey = (key: string) => {
-  return key.replace(/[^a-zA-Z0-9.\-_]/g, "_"); // replace invalid chars with _
-};
+import { SECRET_KEY } from "@env";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import CryptoJS from "crypto-js";
 
 export const secureStorage = {
   setItem: async (key: string, value: string) => {
-    const safeKey = sanitizeKey(key);
-    await SecureStore.setItemAsync(safeKey, value, {
-      keychainService: safeKey, // optional for iOS
-    });
+    const encrypted = CryptoJS.AES.encrypt(value, SECRET_KEY).toString();
+    await AsyncStorage.setItem(key, encrypted);
   },
   getItem: async (key: string) => {
-    const safeKey = sanitizeKey(key);
-    return await SecureStore.getItemAsync(safeKey);
+    const encrypted = await AsyncStorage.getItem(key);
+    if (!encrypted) return null;
+    const bytes = CryptoJS.AES.decrypt(encrypted, SECRET_KEY);
+    return bytes.toString(CryptoJS.enc.Utf8);
   },
-  removeItem: async (key: string) => {
-    const safeKey = sanitizeKey(key);
-    await SecureStore.deleteItemAsync(safeKey);
-  },
+  removeItem: (key: string) => AsyncStorage.removeItem(key),
 };

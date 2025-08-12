@@ -1,5 +1,3 @@
-
-
 # ACME Lottery App
 
 A React Native mobile application built with Expo and TypeScript.  
@@ -10,6 +8,12 @@ This app allows users to play a lucky draw game with ticket management and purch
 https://github.com/user-attachments/assets/a00af42d-31ed-4274-a757-569617b6feb6
 
 ---
+
+### 1. Create `.env` file
+
+```env
+SECRET_KEY=mySuperSecret123
+```
 
 ## Features
 
@@ -27,7 +31,7 @@ https://github.com/user-attachments/assets/a00af42d-31ed-4274-a757-569617b6feb6
 - TypeScript
 - Redux Toolkit + Redux Persist
 - React Navigation (Native Stack)
-- Expo Secure Store for secure storage
+- Async Storage + crypto-js for secure storage
 - ESLint + Prettier for code quality
 
 ---
@@ -48,7 +52,7 @@ cd acme-lot
 npm install
 # or
 yarn install
-````
+```
 
 ---
 
@@ -97,7 +101,7 @@ expo build:android
 expo build:ios
 ```
 
-*Note:* With newer Expo SDKs, you may want to use `eas build` for builds:
+_Note:_ With newer Expo SDKs, you may want to use `eas build` for builds:
 
 ```bash
 eas build --platform android
@@ -136,7 +140,7 @@ yarn lint --fix
 
 ```
 ├── assets/              # Images, icons, fonts, colors, spacing etc.
-├── src/          
+├── src/
     ├── components/      # Reusable React components
     ├── layouts/         # Layout wrappers like MainLayout
     ├── navigation/      # React Navigation configs
@@ -147,6 +151,9 @@ yarn lint --fix
 ├── App.tsx              # Entry point
 ├── prettier.config.js   # Prettier config
 ├── eslint.config.js     # ESLint flat config
+├── babel.config.js      # Babal flat config - env
+├── env.d.ts             # env base config
+├── .env                 # env confidential values
 └── ...
 ```
 
@@ -154,6 +161,6 @@ yarn lint --fix
 
 ## Troubleshooting
 
-* If you face line-ending issues with Prettier/ESLint, ensure your editor is set to use LF (`\n`) endings.
-* Use `git add --renormalize .` to fix existing line endings in the repo.
-* Restart your editor after config changes.
+- If you face line-ending issues with Prettier/ESLint, ensure your editor is set to use LF (`\n`) endings.
+- Use `git add --renormalize .` to fix existing line endings in the repo.
+- Restart your editor after config changes.

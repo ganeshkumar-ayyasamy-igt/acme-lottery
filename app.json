@@ -20,11 +20,22 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.igt.acmelottery"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-secure-store"]
+    "extra": {
+      "eas": {
+        "projectId": "e5b73fd4-ed73-4db6-b74c-a5390d79f764"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/e5b73fd4-ed73-4db6-b74c-a5390d79f764"
+    }
   }
 }
