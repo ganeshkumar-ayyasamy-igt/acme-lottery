@@ -19,6 +19,12 @@ interface BallBaseProps {
   onPress?: (event: GestureResponderEvent) => void;
 }
 
+/**
+ * BallBase component renders a circular button with a label.
+ *
+ * @param param0 - Props for the BallBase component.
+ * @returns The BallBase React component.
+ */
 const BallBase = ({
   label,
   size,
@@ -57,6 +63,7 @@ const BallBase = ({
 
 export default BallBase;
 
+// StyleSheet for BallBase component
 const styles = StyleSheet.create({
   ball: {
     backgroundColor: colors.white,

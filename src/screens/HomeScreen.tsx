@@ -21,16 +21,24 @@ import { TextConstant } from "../utils/Text.constant";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 
+/**
+ * HomeScreen component for displaying and managing user's lottery tickets.
+ *
+ * @remarks
+ * - Shows a list of tickets and allows users to add, delete, and purchase tickets.
+ * - Handles navigation to the ticket selection screen.
+ * - Displays purchase confirmation and handles ticket purchase logic.
+ * - Disables actions based on ticket count and application constants.
+ *
+ * @param navigation - React Navigation prop for screen navigation.
+ * @returns The rendered HomeScreen component.
+ */
 export default function HomeScreen({ navigation }: Props) {
   const insets = useSafeAreaInsets();
   const tickets = useSelector(
     (state: RootState) => state.userLuckyDraw.tickets,
   );
   const dispatch = useDispatch();
-
-  const handleDelete = (index: number) => {
-    dispatch(removeDrawByIndex(index));
-  };
 
   // Memoize disabled state based on tickets length
   const isDisabled = useMemo(() => tickets.length === 0, [tickets]);
@@ -39,16 +47,23 @@ export default function HomeScreen({ navigation }: Props) {
     [tickets],
   );
 
-  //navigation redirection to lottery screen
+  // Handle deletion of a ticket by index
+  const handleDelete = (index: number) => {
+    dispatch(removeDrawByIndex(index));
+  };
+
+  // Navigation redirection to lottery screen
   const onAddPlay = () => {
     navigation.navigate("PickDraw");
   };
 
+  // Purchase ticket handler
   const onPurchase = () => {
     if (tickets.length === 0) {
       Alert.alert(TextConstant.PURCHASE_EMPTY);
       return;
     }
+    // Prepare message for purchase confirmation
     const message = tickets.map((ticket) => ticket.draw.join(",")).join("\n");
     Alert.alert(TextConstant.PURCHASE_MSG, message, [
       {
@@ -89,6 +104,7 @@ export default function HomeScreen({ navigation }: Props) {
   );
 }
 
+// StyleSheet for HomeScreen
 const styles = StyleSheet.create({
   container: { flex: 1, paddingHorizontal: spacing.md, marginBottom: 150 },
   buttonPurchaseContainer: {

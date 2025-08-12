@@ -28,6 +28,12 @@ const PRIMARY_COLOR = colors.primary; // adjust to your primary color
 const SECONDARY_COLOR = colors.secondary; // adjust to your secondary color
 const OUTLINE_COLOR = colors.primary; // adjust to your outline color
 
+/**
+ * Button component renders a customizable button with text.
+ *
+ * @param param0 - Props for the Button component.
+ * @returns The Button React component.
+ */
 const Button: React.FC<ButtonProps> = ({
   title,
   onPress,
@@ -72,6 +78,7 @@ const Button: React.FC<ButtonProps> = ({
 
 export default Button;
 
+// StyleSheet for Button component
 const styles = StyleSheet.create({
   button: {
     width: "100%",

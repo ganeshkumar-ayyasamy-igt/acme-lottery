@@ -13,6 +13,7 @@ const withResponsiveSize = <
   return function ResponsiveBall(
     props: Omit<P, "size"> & { sizePercent?: number; maxSize?: number },
   ) {
+    // Get window dimensions to calculate responsive size
     const { width } = useWindowDimensions();
     const { sizePercent = 14, maxSize = 100, ...restProps } = props;
 

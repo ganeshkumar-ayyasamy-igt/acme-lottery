@@ -35,6 +35,12 @@ const splitIntoColumns = (arr: number[], numCols: number): number[][] => {
 };
 const columns = splitIntoColumns(numbers, NUM_PER_ROW);
 
+/**
+ * PickDrawScreen component allows users to select lottery numbers.
+ *
+ * @param param0 - Navigation prop for screen redirection.
+ * @returns The PickDrawScreen React component.
+ */
 const PickDrawScreen = ({ navigation }: Props) => {
   const insets = useSafeAreaInsets();
   const tickets = useSelector(
@@ -54,6 +60,7 @@ const PickDrawScreen = ({ navigation }: Props) => {
     [selectedLot],
   );
 
+  // Callback for selecting/deselecting numbers
   const onPressCallback = (num: number) => {
     if (
       selectedLot.length === DrawConstant.DRAW_LOT_TICKET_BASE &&
@@ -69,17 +76,19 @@ const PickDrawScreen = ({ navigation }: Props) => {
     });
   };
 
+  // Check if two draws are the same
   const isSameDraw = (a: number[], b: number[]) => {
     if (a.length !== b.length) return false;
     return a.every((num, i) => num === b[i]);
   };
 
+  // Handle playing numbers
   const onPlayNumbers = () => {
     if (selectedLot.length < DrawConstant.DRAW_LOT_TICKET_BASE) {
       Alert.alert(TextConstant.SELECTION_MISSED);
       return false;
     }
-
+    // Check for duplicates in the selected lot
     const duplicate = tickets.some((ticket) =>
       isSameDraw(ticket.draw, selectedLot),
     );
@@ -88,10 +97,12 @@ const PickDrawScreen = ({ navigation }: Props) => {
       Alert.alert(TextConstant.SELECTION_DUPLICATE);
       return false;
     }
+    // Dispatch action to add selected tickets
     dispatch(addTickets(selectedLot));
     navigation.goBack();
   };
 
+  // Render the grid of numbers
   const NumberGridList = () => {
     return (
       <View style={[styles.lotContainer]}>
@@ -148,6 +159,7 @@ const PickDrawScreen = ({ navigation }: Props) => {
 
 export default PickDrawScreen;
 
+// StyleSheet for PickDrawScreen
 const styles = StyleSheet.create({
   container: { flex: 1, marginBottom: 100 },
   title: {

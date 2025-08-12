@@ -16,6 +16,12 @@ type CardProps = {
   cardItems?: CardItem[];
 };
 
+/**
+ * DrawCard component displays a card with lottery numbers and a delete button.
+ *
+ * @param param0 - Props for the DrawCard component.
+ * @returns The DrawCard React component.
+ */
 const DrawCard = ({ cardItems, onCardDelete }: CardProps) => {
   return (
     <>
@@ -42,6 +48,7 @@ const DrawCard = ({ cardItems, onCardDelete }: CardProps) => {
 
 export default DrawCard;
 
+// StyleSheet for DrawCard component
 const styles = StyleSheet.create({
   card: {
     backgroundColor: colors.cardGrey,

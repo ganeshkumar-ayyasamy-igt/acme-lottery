@@ -7,6 +7,7 @@ type MainLayoutProps = {
   children: React.ReactNode;
 };
 
+// MainLayout component provides a consistent layout structure for the app.
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <SafeAreaView style={styles.safeArea}>
