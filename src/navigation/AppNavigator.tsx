@@ -19,7 +19,7 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="YourNumbers"
         screenOptions={{
           headerStyle: { backgroundColor: navigationTheme.colors.card },
           headerTintColor: navigationTheme.colors.text,
@@ -28,17 +28,17 @@ export default function AppNavigator() {
         }}
       >
         <Stack.Screen
-          name="Home"
+          name="YourNumbers"
           component={HomeScreen}
           options={{
-            title: TextConstant.HOME_TITLE,
+            title: "Your Numbers",
           }}
         />
         <Stack.Screen
           name="PickDraw"
           component={PickDrawScreen}
           options={{
-            title: TextConstant.LUCKY_LOTTO,
+            title: "Lucky Lotto",
           }}
         />
       </Stack.Navigator>

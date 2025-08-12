@@ -1,6 +1,6 @@
 const TextConstant = {
-  HOME_TITLE: "Your Numbers",
   LUCKY_LOTTO: "Lucky Lotto",
+  YOUR_NUMBERS: "Your Numbers",
   ADD_PLAY: "Add Play",
   PURCHASE: "Purchase",
   SELECTION_DUPLICATE:
