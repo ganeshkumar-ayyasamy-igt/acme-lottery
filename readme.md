@@ -7,9 +7,7 @@ This app allows users to play a lucky draw game with ticket management and purch
 
 ## Demo Video
 
-A demo video is included in the `assets/videos/` folder:
-
-`assets/videos/demo.webm`
+https://github.com/user-attachments/assets/a00af42d-31ed-4274-a757-569617b6feb6
 
 ---
 
